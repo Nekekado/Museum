@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:map ="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Museum.MainPage">
+
+    <StackLayout>
+        <map:Map x:Name="map" IsShowingUser="True">
+            <x:Arguments>
+                <map:MapSpan>
+                    <x:Arguments>
+                        <map:Position>
+                            <x:Arguments>
+                                <x:Double>59.278709</x:Double>
+                                <x:Double>39.715809</x:Double>
+                            </x:Arguments>
+                        </map:Position>
+                        <x:Double>0.01</x:Double>
+                        <x:Double>0.01</x:Double>
+                    </x:Arguments>
+                </map:MapSpan>
+            </x:Arguments>
+        </map:Map>
+    </StackLayout>
+
+</ContentPage>

@@ -1,37 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using Plugin.Geolocator;
 
 namespace Museum
 {
     public partial class MainPage : ContentPage
     {
+        ZoneViewModel zoneViewModel;
+        double timeToUpdate = 10;
+
         public MainPage()
         {
             InitializeComponent();
 
-
-
-            Polygon zone1 = new Polygon
+            // Создается класс, в котором считывается json с сервера
+            zoneViewModel = new ZoneViewModel();
+            // Перенос данных с json в список Zones
+            zoneViewModel.TestLoadData();
+            // Создание полигонов на карте
+            foreach (var zone in zoneViewModel.Zones)
             {
-                StrokeColor = Color.Red,
-                StrokeWidth = 8,
-                FillColor = Color.FromRgba(252, 0, 0, 125),
-                Geopath =
-                {
-                    new Position(59.278476, 39.716340),
-                    new Position(59.278347, 39.716519),
-                    new Position(59.278435, 39.716891),
-                    new Position(59.278598, 39.716742)
-                }
-            };
+                Polygon polygon = zone.CreatePolygon(); // Создание полигона как элемент класса
+                map.MapElements.Add(polygon); // Добовление полигона на карту
+            }
 
-            map.MapElements.Add(zone1);
+            // Таймер на вызов метода проверки зон каждые timeToUpdate
+            Device.StartTimer(TimeSpan.FromSeconds(timeToUpdate), () => {
+                Device.BeginInvokeOnMainThread(() => CheckInZone());
+                return true;
+            });
+        }
+
+        // Временно не рабочий метод проигрывания музыки
+        private void PlayAuido(string path)
+        {
+            var audio = new AudioService();
+            audio.PlayAudio(path);
+        }
+
+        // Метод для проверки в зоне ли пользователь
+        private async void CheckInZone()
+        {
+            // Подключение геолокатора
+            var locator = CrossGeolocator.Current;
+            // Получение позиции пользователя
+            var p = await locator.GetPositionAsync();
+            
+            Position pos = new Position(p.Latitude, p.Longitude);
+
+            // Проверка всех зон
+            foreach(var zone in zoneViewModel.Zones)
+            {
+                // Если пользователь в зоне
+               if( zone.InPoly(pos))
+                {
+                    label.Text = zone.id.ToString(); // Вывести айди зоны
+                    PlayAuido(zone.audio); // Запустить музыку
+                    break;
+                }
+                else // Если не в зоне
+                {
+                    label.Text = "Не в зоне"; // Вывести, что не в зоне
+                    // Нужно стопнуть музыку
+                }
+            }
         }
     }
 }

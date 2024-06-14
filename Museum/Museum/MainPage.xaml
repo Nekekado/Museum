@@ -21,6 +21,12 @@
                 </map:MapSpan>
             </x:Arguments>
         </map:Map>
+
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="label" Text="" HorizontalOptions="End"/>
+        </StackLayout>
     </StackLayout>
+
+    
 
 </ContentPage>

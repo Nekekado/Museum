@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Android", "Museum\Museum.Android\Museum.Android.csproj", "{CCAEB6A0-7F0E-4795-8538-C93985DBAFA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum", "Museum\Museum\Museum.csproj", "{70595B95-57CE-435E-806A-572FBFDDEE0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Museum", "Museum\Museum\Museum.csproj", "{70595B95-57CE-435E-806A-572FBFDDEE0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

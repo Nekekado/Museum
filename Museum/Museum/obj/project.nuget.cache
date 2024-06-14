@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "OkVBEEHEH9DzslU8LBGY3729DPZuLgS0GZcehT+2CpUySEZKeAnfNAvoAc7g6lLhx15cqa2j8hECZvOVOZ2uGQ==",
+  "dgSpecHash": "OaOrZbFx960f/JtVrBrdlHJpovE3h3oz0EP9C5/swKLn52li3NRHkPRU1A2eppF2WqOl5MopJiGiD70p59HmTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nikit\\Projects\\Visual studio\\Xamarin\\Museum\\Museum\\Museum\\Museum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikit\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\nikit\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\nikit\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\nikit\\.nuget\\packages\\xam.plugin.simpleaudioplayer\\1.6.0\\xam.plugin.simpleaudioplayer.1.6.0.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\xamarin.essentials\\1.8.1\\xamarin.essentials.1.8.1.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\xamarin.forms\\5.0.0.2662\\xamarin.forms.5.0.0.2662.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2662\\xamarin.forms.maps.5.0.0.2662.nupkg.sha512"

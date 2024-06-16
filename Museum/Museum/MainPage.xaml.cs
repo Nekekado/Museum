@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
+using System.Collections.Generic;
 
 namespace Museum
 {
@@ -15,7 +16,7 @@ namespace Museum
         {
             InitializeComponent();
 
-            _downloader.OnFileDownloaded += OnFileDownLoaded;
+            //_downloader.OnFileDownloaded += OnFileDownLoaded;
 
             // Создается класс, в котором считывается json с сервера
             _zoneViewModel = new ZoneViewModel();
@@ -28,6 +29,8 @@ namespace Museum
                 Polygon polygon = zone.CreatePolygon(); // Создание полигона как элемент класса
                 map.MapElements.Add(polygon); // Добовление полигона на карту
             }
+
+            DownLoadFile("https://disk.yandex.ru/d/VtqgKifII1STMg/аудио", _zoneViewModel.Zones);
 
             // Таймер на вызов метода проверки зон каждые timeToUpdate
             Device.StartTimer(TimeSpan.FromSeconds(_timeToUpdate), () => {
@@ -48,9 +51,9 @@ namespace Museum
             }    
         }
 
-        public void DownLoadFile(string url)
+        public void DownLoadFile(string url, List<Zone> zones)
         {
-            _downloader.DownloadFile(url);
+            _downloader.DownloadFile(url, zones);
         }
 
         // Метод для проверки в зоне ли пользователь

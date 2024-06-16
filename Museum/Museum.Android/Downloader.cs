@@ -22,20 +22,22 @@ namespace Museum.Droid
     {
         public event EventHandler<DownloadEventArgs> OnFileDownloaded;
 
-        public void DownloadFile(string url)
+        public void DownloadFile(string url, List<Zone> zones)
         {
             var context = Android.App.Application.Context;
             var pathToNewFolder = Path.Combine(context.GetExternalFilesDir(Android.OS.Environment.StorageDirectory.ToString()).ToString());
             Directory.CreateDirectory(pathToNewFolder);
 
-
-
             try
             {
                 WebClient webClient = new WebClient();
                 webClient.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(Completed);
-                string pathToNewFile = Path.Combine(pathToNewFolder, Path.GetFileName(url));
-                webClient.DownloadFileAsync(new Uri(url), pathToNewFile);
+                foreach (var zone in zones)
+                {
+                    string urlFile = System.IO.Path.Combine(url, zone.audio);
+                    string pathToNewFile = System.IO.Path.Combine(pathToNewFolder, System.IO.Path.GetFileName(url));
+                    webClient.DownloadFileAsync(new Uri(url), pathToNewFile);
+                }
             }
             catch(Exception)
             {

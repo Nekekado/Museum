@@ -13,3 +13,18 @@ C:\Users\nikit\Projects\Visual studio\Xamarin\Museum\Museum\Museum\obj\Debug\net
 C:\Users\nikit\Projects\Visual studio\Xamarin\Museum\Museum\Museum\obj\Debug\netstandard2.0\Museum.dll
 C:\Users\nikit\Projects\Visual studio\Xamarin\Museum\Museum\Museum\obj\Debug\netstandard2.0\refint\Museum.dll
 C:\Users\nikit\Projects\Visual studio\Xamarin\Museum\Museum\Museum\obj\Debug\netstandard2.0\Museum.pdb
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\bin\Debug\netstandard2.0\Museum.deps.json
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\bin\Debug\netstandard2.0\Museum.dll
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\bin\Debug\netstandard2.0\ref\Museum.dll
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\bin\Debug\netstandard2.0\Museum.pdb
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.csproj.AssemblyReference.cache
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.AssemblyInfoInputs.cache
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.AssemblyInfo.cs
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.csproj.CoreCompileInputs.cache
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.dll
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\refint\Museum.dll
+C:\Users\nikit\Downloads\Museum-main\Museum\Museum\obj\Debug\netstandard2.0\Museum.pdb

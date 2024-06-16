@@ -6,7 +6,7 @@ namespace Museum
 {
     public interface IDonwloader
     {
-        void DownloadFile(string url);
+        void DownloadFile(string url, List<Zone> zones);
         event EventHandler<DownloadEventArgs> OnFileDownloaded;
     }
 

@@ -7,36 +7,50 @@ namespace Museum
 {
     public partial class MainPage : ContentPage
     {
-        ZoneViewModel zoneViewModel;
-        double timeToUpdate = 10;
+        private ZoneViewModel _zoneViewModel;
+        private double _timeToUpdate = 10;
+        private IDonwloader _downloader = DependencyService.Get<IDonwloader>();
 
         public MainPage()
         {
             InitializeComponent();
 
+            _downloader.OnFileDownloaded += OnFileDownLoaded;
+
             // Создается класс, в котором считывается json с сервера
-            zoneViewModel = new ZoneViewModel();
+            _zoneViewModel = new ZoneViewModel();
             // Перенос данных с json в список Zones
-            zoneViewModel.TestLoadData();
+            _zoneViewModel.TestLoadData();
+
             // Создание полигонов на карте
-            foreach (var zone in zoneViewModel.Zones)
+            foreach (var zone in _zoneViewModel.Zones)
             {
                 Polygon polygon = zone.CreatePolygon(); // Создание полигона как элемент класса
                 map.MapElements.Add(polygon); // Добовление полигона на карту
             }
 
             // Таймер на вызов метода проверки зон каждые timeToUpdate
-            Device.StartTimer(TimeSpan.FromSeconds(timeToUpdate), () => {
+            Device.StartTimer(TimeSpan.FromSeconds(_timeToUpdate), () => {
                 Device.BeginInvokeOnMainThread(() => CheckInZone());
                 return true;
             });
         }
 
-        // Временно не рабочий метод проигрывания музыки
-        private void PlayAuido(string path)
+        private void OnFileDownLoaded(object sender, DownloadEventArgs e)
         {
-            var audio = new AudioService();
-            audio.PlayAudio(path);
+            if(e.FileSaved)
+            {
+                DisplayAlert("Downloader", "File Saved Successfully", "Close");
+            }
+            else
+            {
+                DisplayAlert("Downloader", "File error while saving", "Close");
+            }    
+        }
+
+        public void DownLoadFile(string url)
+        {
+            _downloader.DownloadFile(url);
         }
 
         // Метод для проверки в зоне ли пользователь
@@ -50,19 +64,19 @@ namespace Museum
             Position pos = new Position(p.Latitude, p.Longitude);
 
             // Проверка всех зон
-            foreach(var zone in zoneViewModel.Zones)
+            foreach(var zone in _zoneViewModel.Zones)
             {
                 // Если пользователь в зоне
                if( zone.InPoly(pos))
                 {
                     label.Text = zone.id.ToString(); // Вывести айди зоны
-                    PlayAuido(zone.audio); // Запустить музыку
+                    DependencyService.Get<IAudio>().PlayAudio(zone.audio);// Запустить музыку
                     break;
                 }
                 else // Если не в зоне
                 {
                     label.Text = "Не в зоне"; // Вывести, что не в зоне
-                    // Нужно стопнуть музыку
+                    DependencyService.Get<IAudio>().StopAudio();// Нужно стопнуть музыку
                 }
             }
         }

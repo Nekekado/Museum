@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qA9qkpGTEcz2ptBVOJo/wiie/sBNRXW+NwIrkc16NHG9xby1GK3nv9TgG79IeX4s/nXESGWJJIyBrqukiop9QQ==",
+  "dgSpecHash": "yuAZjnkQsFb65HTpJE0pXTblEz+4T5zefYq1syZFJjycwkgx5n3xKN01oq5Lly//mbgtEY/8CpWzosg5MyZXUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nikit\\Downloads\\Museum-main\\Museum\\Museum\\Museum.csproj",
+  "projectFilePath": "C:\\Users\\nikit\\Projects\\Museum\\Museum\\Museum\\Museum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikit\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

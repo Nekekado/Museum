@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v9ek81AlrXdAqrzCioifpY7iq/NNrsBvpIWes0OYt+6ypCRipmWdJdyKdsOiYAXw5aQg4eUunNItN8yKlyMzrw==",
+  "dgSpecHash": "+mOI8qoBBqaJSc2G2b59MfdrR1IfK6NT436qbJ+MELP775mvY8LVCenNAgnoI5U/0/W31E378QIV7Xlel/DO6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nikit\\Projects\\Museum\\Museum\\Museum.Android\\Museum.Android.csproj",
+  "projectFilePath": "C:\\Users\\nikit\\Downloads\\Museum-main\\Museum\\Museum.Android\\Museum.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikit\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\nikit\\.nuget\\packages\\plugin.currentactivity\\2.1.0.2\\plugin.currentactivity.2.1.0.2.nupkg.sha512",
